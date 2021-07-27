@@ -4,9 +4,7 @@
 //  Created by deathlezz on 29/05/2021.
 //
 
-
 import Foundation
-
 
 // set the dates
 let futureDate: Date = {
@@ -18,7 +16,6 @@ let futureDate: Date = {
     return Calendar.current.date(from: future)!
 }()
 
-
 // set the countdown
 var countdown: DateComponents {
     
@@ -26,17 +23,14 @@ var countdown: DateComponents {
     return Calendar.current.dateComponents([.day, .hour, .minute, .second], from: Date(), to: futureDate)
 }
 
-
 // set the variable to our remaining time
 let days = countdown.day!
 let hours = countdown.hour!
 let minutes = countdown.minute!
 let seconds = countdown.second!
 
-
 // set the countdown label
 let countDownLabel = "\(days) Days, \(hours) Hours, \(minutes) Minutes, \(seconds) Seconds"
-
 
 // final output
 print(countDownLabel)
