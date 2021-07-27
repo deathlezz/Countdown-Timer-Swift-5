@@ -4,9 +4,7 @@
 //  Created by deathlezz on 29/05/2021.
 //
 
-
 import Foundation
-
 
 // Set current date
 let date = Date()
