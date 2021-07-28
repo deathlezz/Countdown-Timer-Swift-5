@@ -36,7 +36,7 @@ func timer() {
             // Set the calendar and calibrate the date
             let calendar = Calendar.current
             var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-            components.second! += 2
+            components.second! += 1
             let currentDate = calendar.date(from: components)
             
             // Change dates' diference to days, hours, minutes and seconds
@@ -52,9 +52,7 @@ func timer() {
                 sleep(1)
                 
             } else if eventDate! == currentDate! {
-                
-                print(label)
-                sleep(1)
+             
                 print("Ring, Ring.")
                 return timer()
                 
