@@ -6,31 +6,26 @@
 
 import Foundation
 
-// set the dates
+// Set dates
 let futureDate: Date = {
     
-    // set the day in a future
-    let future = DateComponents(year: 2022, month: 7, day: 0, hour: 0, minute: 0)
+    // Set the event date
+    let future = DateComponents(year: 2021, month: 7, day: 28, hour: 13, minute: 4)
     
-    // set the current date
+    // Set the current date
     return Calendar.current.date(from: future)!
+    
 }()
 
-// set the countdown
+// Set the countdown
 var countdown: DateComponents {
     
-    // change the seconds to hours, minutes and days
+    // Convert dates' diference to days, hours, minutes and seconds
     return Calendar.current.dateComponents([.day, .hour, .minute, .second], from: Date(), to: futureDate)
 }
 
-// set the variable to our remaining time
-let days = countdown.day!
-let hours = countdown.hour!
-let minutes = countdown.minute!
-let seconds = countdown.second!
+// Set the countdown label
+let countDownLabel = "\(countdown.day!) Days, \(countdown.hour!) Hours, \(countdown.minute!) Minutes, \(countdown.second!) Seconds"
 
-// set the countdown label
-let countDownLabel = "\(days) Days, \(hours) Hours, \(minutes) Minutes, \(seconds) Seconds"
-
-// final output
+// Output
 print(countDownLabel)
