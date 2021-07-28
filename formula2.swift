@@ -18,7 +18,7 @@ let currentDate = userCalendar.date(from: components)!
 // Convert eventDate's calendar to the user's calendar
 let convertedEventDate = userCalendar.date(from: eventDate)!
         
-// Change dates' diference to days, hours, minutes and seconds
+// Convert dates' diference to days, hours, minutes and seconds
 let timeLeft = userCalendar.dateComponents([.day, .hour, .minute, .second], from: currentDate, to: convertedEventDate)
 
 // Set the countdown label
