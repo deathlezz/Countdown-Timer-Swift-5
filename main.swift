@@ -16,7 +16,7 @@ func timer() {
     let input = readLine()
 
     // Check date's format (dd-MM-yyyy HH:mm) and validation (e.g. month = 1...12, day = 1...31 etc.)
-    let dateRegex = "^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-(20)\\d\\d ([01][0-9]|2[0-3]):([0-5][0-9])$"
+    let dateRegex = "^(0?[1-9]|[12][0-9]|3[01])[/.-](0?[1-9]|1[012])[/.-](20)\\d\\d ([01]?[0-9]|2[0-3]):([0-5][0-9])$"
     let dateTest = NSPredicate(format: "SELF MATCHES %@", dateRegex)
     let result = dateTest.evaluate(with: input)
 
@@ -28,7 +28,7 @@ func timer() {
         format.dateFormat = "dd-MM-yyyy HH:mm"
         let eventDate = format.date(from: input!)
         
-        while eventDate != nil {
+        func calculate() {
         
             // Set current date
             let date = Date()
@@ -50,6 +50,7 @@ func timer() {
                 // Output every second
                 print(label)
                 sleep(1)
+                return calculate()
                 
             } else if eventDate! == currentDate! {
              
@@ -62,6 +63,7 @@ func timer() {
                 return timer()
             }
         }
+        calculate()
 
     } else {
         print()
