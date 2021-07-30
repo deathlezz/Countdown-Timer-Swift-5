@@ -42,7 +42,7 @@ func enterYear() {
                                     
                                     if eventDate.minute != nil && eventDate.minute! >= 1 && eventDate.minute! <= 59 {
                                         
-                                        while eventDate.minute != nil {
+                                        func calculate() {
                                         
                                             // Set current date
                                             let date = Date()
@@ -65,6 +65,7 @@ func enterYear() {
                                                 // Output every second
                                                 print(label)
                                                 sleep(1)
+                                                return calculate()
                                                 
                                             } else if convertedEventDate == currentDate {
                                                 
@@ -77,6 +78,7 @@ func enterYear() {
                                                 return enterYear()
                                             }
                                         }
+                                        calculate()
                                         
                                     } else {
                                         print()
