@@ -14,7 +14,6 @@ let futureDate: Date = {
     
     // Set the current date
     return Calendar.current.date(from: future)!
-    
 }()
 
 // Set the countdown
