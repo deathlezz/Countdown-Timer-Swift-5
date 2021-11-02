@@ -48,7 +48,6 @@ func enterYear() {
                                             let date = Date()
                                             let userCalendar = Calendar.current
                                             var components = userCalendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-                                            components.second! += 1
                                             let currentDate = userCalendar.date(from: components)!
                                             
                                             // Convert eventDate to user's calendar
