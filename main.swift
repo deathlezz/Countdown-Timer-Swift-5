@@ -36,7 +36,6 @@ func timer() {
             // Set the calendar and calibrate the date
             let calendar = Calendar.current
             var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-            components.second! += 1
             let currentDate = calendar.date(from: components)
             
             // Change dates' diference to days, hours, minutes and seconds
